@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Class Randomizer</title>
+  </head>
+  <body>
+    <ol></ol>
+		<button>Randomize</button>
+		<script defer>
+			const names = [
+				"Lang",
+				"Ng",
+				"Hardnett",
+				"Brandt",
+				"Hagerott",
+				"Shaw",
+				"Taggart",
+				"Janes",
+				"Garett",
+				"Kehoe",
+				"Hanna",
+				"Roberts",
+				"Aguon",
+				"Cole",
+				"Yanes",
+				"Aguilar",
+				"Vega",
+				"Smith",
+				"Mulkey",
+				"Auger",
+				"Vazquez",
+				"Whitney",
+				"Gober",
+				"YENOU",
+				"Kendrick",
+				"Wyche",
+				"Henderman",
+				"Rouleau",
+				"Hartman",
+				"Vargas",
+				"Rosalez",
+				"Bond",
+				"Henshaw"
+			]
+			
+			function populate() {
+				document.querySelector('ol').innerText = "";
+				for(let i = 0; i < names.length; i++) {
+					const li = document.createElement('li');
+					li.innerText = names[i];
+					document.querySelector('ol').append(li);
+				}
+			}
+			populate();
+			
+			function randomize() {
+				names.sort(() => Math.random() - 0.5);
+				populate();
+			}
+			
+			document.querySelector('button').addEventListener('click', () => {
+				randomize();
+				populate();
+			});
+		</script>
+  </body>
+</html>
