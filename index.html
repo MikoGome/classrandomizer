@@ -44,21 +44,17 @@
 				"Walker",
 				"Dońe"
 		  ]
-
-			const numbers = [];
-			for(let i = 0; i < names.length; i++) {
-				numbers.push(i + 1);
-			}
 			
 			function populate(numbers) {
+				console.log(numbers ? numbers[i] : 1);
 				document.querySelector('ul').innerText = "";
 				for(let i = 0; i < names.length; i++) {
 					const li = document.createElement('li');
-					li.innerText = names[i] + ' : ' + numbers[i];
+					li.innerText = names[i] + ' : ' + (numbers ? numbers[i] : i + 1);
 					document.querySelector('ul').append(li);
 				}
 			}
-			populate(numbers);
+			populate();
 			
 			function randomize() {
 				const numbers = [];
